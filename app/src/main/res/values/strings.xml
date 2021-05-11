@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">RmembR</string>
+    <string name="title_activity_moment">Moment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="lista_de_memorias">lista_de_memorias</string>
+    <string name="seu_reposit_rio_de_mem_rias_agrad_veis">Seu repositório de memórias agradáveis</string>
+    <string name="rmembr">RmembR</string>
+    <string name="logo_remember">Logo remember</string>
+    <string name="adicionar_mem_ria">Adicionar memória</string>
+    <string name="escolha_a_imagem">Escolha a imagem</string>
+    <string name="t_tulo_para_esta_mem_ria">Título para esta memória</string>
+    <string name="t_tulo_da_mem_ria">Título da memória</string>
+    <string name="filtro_p_b"><![CDATA[Filtro P&B]]></string>
+    <string name="salvar">Salvar</string>
+    <string name="imagem_memoria">Imagem memoria</string>
+</resources>
