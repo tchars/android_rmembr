@@ -17,7 +17,8 @@
     <string name="escolha_a_imagem">Escolha a imagem</string>
     <string name="t_tulo_para_esta_mem_ria">Título para esta memória</string>
     <string name="t_tulo_da_mem_ria">Título da memória</string>
-    <string name="filtro_p_b"><![CDATA[Filtro P&B]]></string>
+    <string name="filtro_p_b">Qualidade da foto</string>
     <string name="salvar">Salvar</string>
     <string name="imagem_memoria">Imagem memoria</string>
+    <string name="imagem">imagem</string>
 </resources>

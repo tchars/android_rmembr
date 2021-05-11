@@ -3,6 +3,7 @@ package br.com.tchars.rmembr.repositories;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 
 import java.util.ArrayList;
 

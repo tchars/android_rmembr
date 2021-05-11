@@ -1,5 +1,7 @@
 package br.com.tchars.rmembr.models;
 
+import android.net.Uri;
+
 public class Memoria {
     private Integer id;
     private String urlImagem;

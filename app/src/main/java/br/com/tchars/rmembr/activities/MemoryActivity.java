@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import br.com.tchars.rmembr.R;
+import br.com.tchars.rmembr.adapters.MemoryAdapter;
 import br.com.tchars.rmembr.models.Memoria;
 import br.com.tchars.rmembr.services.MemoriaService;
 import br.com.tchars.rmembr.utils.SalvarMemoriaPasta;
@@ -53,6 +54,8 @@ public class MemoryActivity extends AppCompatActivity {
     private MemoriaService _memoriaService;
     private static Context _context;
 
+    private MemoryAdapter _memoryAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,14 +73,14 @@ public class MemoryActivity extends AppCompatActivity {
 
         imagemEscolhida.setOnClickListener(v -> SelecionarImagem());
         btnSalvar.setOnClickListener(v -> SalvarMemoria());
+
+        _memoryAdapter = new MemoryAdapter(_context);
     }
 
     private void SalvarMemoria() {
 
         nome = "memory_" + new SimpleDateFormat("dd-MM-yyyy-HH:mm:ss.SSS").format(new Date()) + ".png";
         Integer valorSeekbar = seekBar.getProgress();
-
-        //System.out.println("valorSeekbar " + valorSeekbar);
 
         try {
             new SalvarMemoriaPasta(getApplicationContext()).
@@ -87,7 +90,11 @@ public class MemoryActivity extends AppCompatActivity {
 
             SalvarNoBanco();
 
-            Toast.makeText(getApplicationContext(), "Salvo", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Memória salva!", Toast.LENGTH_LONG).show();
+
+            _memoryAdapter.notifyDataSetChanged();
+
+            this.finish();
         }
         catch (Exception ex) {
             ex.printStackTrace();
@@ -96,8 +103,6 @@ public class MemoryActivity extends AppCompatActivity {
 
     private void SalvarNoBanco() {
         _memoriaService.CadastrarMemoria(nome, titulo.getText().toString());
-
-        ArrayList<Memoria> memorias = _memoriaService.BuscarMemorias();
     }
 
     private void SelecionarImagem() {
@@ -160,7 +165,6 @@ public class MemoryActivity extends AppCompatActivity {
         if (requestCode == CAMERA_CODE) {
             Bundle bundle = data.getExtras();
             bmp = (Bitmap) bundle.get("data");
-            //bmp = (Bitmap) bundle.get("br/com/tchars/rmembr/data");
 
             imagemEscolhida.setImageBitmap(bmp);
 
